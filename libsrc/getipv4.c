@@ -1,9 +1,3 @@
-///
-/// @brief  : HTTP Client test
-/// @file   : httpcli.c
-/// @date   : 2024. 05. 07. (화) 11:02:11 KST
-/// @author : jay
-///
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,7 +14,6 @@
 /// @param   ip      : ip buffer   [OUT]
 /// @return  0:Error, 1:성공
 ////////////////////////////////////////////////////////////////////////////////
-
 int GetIpv4(char *domain, char *ip)
 {
 struct addrinfo *result;
@@ -33,6 +26,7 @@ struct addrinfo *p;
 
     int status = getaddrinfo(domain, NULL, &hints, &result);
     if (status != 0) {
+        fprintf(stderr, "getaddrinfo error: %s\n", gai_strerror(status));
         return -1;
     }
 
