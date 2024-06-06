@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
         printf("Connection Failed\n");
         exit(1);
     }
+    snprintf(sendbuf, sizeof(sendbuf), "Hello from client");
     WriteStream2(sockfd, sendbuf, strlen(sendbuf));
     printf("Message sent\n");
 

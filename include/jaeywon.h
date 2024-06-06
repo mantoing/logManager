@@ -8,6 +8,15 @@
 #ifndef JAEYWON_H
 # define JAEYWON_H
 
+
+typedef struct _queue {
+    int wpos;
+    int dcnt;
+    char data[1000][1024];
+} queue;
+
+extern queue msg_queue;
+
 extern int GetIpv4(char *domain, char *ip);
 extern int OpenInetStreamServer(int port);
 extern int OpenInetStreamClient(char *host, int port);
